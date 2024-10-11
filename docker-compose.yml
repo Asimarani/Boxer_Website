@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8081:80"  # Change the host port from 8080 to 8081
+    volumes:
+      - ./:/usr/share/nginx/html
+    networks:
+      - webnet
+
+networks:
+  webnet:
